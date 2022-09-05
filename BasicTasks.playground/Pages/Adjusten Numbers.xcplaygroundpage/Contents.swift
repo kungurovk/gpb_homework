@@ -12,9 +12,13 @@ solution(inputArray) = 21
 
 import Foundation
 
+let isFindedPair = { (values: [Int]) -> Bool in
+    return !values.isEmpty && values.count >= 2
+}
+
 func solution(values: [Int]?) -> Int {
-    guard var values = values, (!values.isEmpty && values.count >= 2) else {
-        return ((values?.count ?? 0) == 1) ? (values?.first ?? 0) : Int.min
+    guard var values = values, isFindedPair(values) else {
+        return /*((values?.count ?? 0) == 1) ? (values?.first ?? 0) : */Int.min
     }
 
     let firstResult = values.removeFirst() * values[0]
@@ -28,5 +32,5 @@ func solution(values: [Int]?) -> Int {
 print(solution(values: [3, 6, -2, -5, 7, 3]))
 print(solution(values: [0, 1, 2, 3, 4, 3]))
 print(solution(values: [1, -2, 3, -4, 3]))
-print(solution(values: [1]))
+//print(solution(values: [1]))
 //: [Next](@next)

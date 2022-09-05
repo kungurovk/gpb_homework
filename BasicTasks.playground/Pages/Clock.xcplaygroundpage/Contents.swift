@@ -15,13 +15,18 @@ import Foundation
 
  if some of parameter nil - return nil
  */
+let MSECONDS_IN_SECOND = 1000
+let SECONDS_IN_MINUTE = 60
+let MINUTES_IN_HOUR = 60
 
 func clockTime(_ h: Int?, _ m: Int?, _ s: Int?) -> Int? {
     guard let h = h, let m = m, let s = s else {
         return nil;
     }
     
-    return (h * 60 * 60 * 1000) + (m * 60 * 1000) + (s * 1000)
+    return (h * MINUTES_IN_HOUR * SECONDS_IN_MINUTE * MSECONDS_IN_SECOND) +
+            (m * SECONDS_IN_MINUTE * MSECONDS_IN_SECOND) +
+            (s * MSECONDS_IN_SECOND)
 }
 
 print(clockTime(0, nil, 1) as Any)
