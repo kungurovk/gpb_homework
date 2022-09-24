@@ -4,10 +4,10 @@ import UIKit
 
 // MARK: - 1/3
 // Есть произвольный массив чисел, найти максимальное и минимальное число и поменять их местами
-
-let g_amountOfNumbers = 10
-
-let getArrayOfNumbers = { (1...g_amountOfNumbers).map( {_ in Int.random(in: 1...g_amountOfNumbers)} ) }
+let getArrayOfNumbers = {
+    (amount: Int, startEnd: ClosedRange<Int>) -> [Int] in
+    (1...amount).map( {_ in Int.random(in: startEnd) } )
+}
 
 func swapNumbers(from arrayOfNumbers: inout [Int]) {
     guard !arrayOfNumbers.isEmpty else {
@@ -25,11 +25,11 @@ func swapNumbers(from arrayOfNumbers: inout [Int]) {
     arrayOfNumbers.swapAt(minIndex, maxIndex)
 }
 
-var arrayOfNumbers = getArrayOfNumbers()
+var arrayOfNumbers = getArrayOfNumbers(10, -10...10)
 
-print(arrayOfNumbers)
+print("Default array: \(arrayOfNumbers)")
 swapNumbers(from: &arrayOfNumbers)
-print(arrayOfNumbers)
+print("Changed array: \(arrayOfNumbers)")
 print("-------------------------------")
 
 // MARK: - 2/3
@@ -41,15 +41,31 @@ let getArrayOfCharacters = { (charRange).map( {_ in Character(UnicodeScalar(char
 let firstArrayOfChars = getArrayOfCharacters()
 let secondArrayOfChars = getArrayOfCharacters()
 
-print(firstArrayOfChars)
-print(secondArrayOfChars)
+print("First array: \(firstArrayOfChars)")
+print("Second array: \(secondArrayOfChars)")
 
 func getSetIntersection(_ firstArray: [Character], _ secondArray: [Character]) -> Set<Character> {
     Set(firstArrayOfChars).intersection(secondArrayOfChars)
 }
 
-print(getSetIntersection(firstArrayOfChars, secondArrayOfChars))
+print("Intersection result: \(getSetIntersection(firstArrayOfChars, secondArrayOfChars))")
+print("-------------------------------")
 
 //MARK: - 3/3
 // Создать словарь с соотношением имя (ключ) пользователя - пароль (значение), получить из словаря все имена, пароли которых длиннее 10 символов
 
+var userMap: [String: String] = [:]
+
+for _ in 1...10 {
+    let userName = String(getArrayOfCharacters().dropLast(Int.random(in: 10...15)))
+    let password = getArrayOfNumbers(Int.random(in: 5...15), 0...9).map{ String($0) }.joined()
+    userMap[userName] = password
+}
+
+print("All users: \(userMap)")
+
+func getLongPasswordUsers(from map: [String : String], maxLength: Int = 10) -> [String : String] {
+    return map.filter({ $0.value.count > maxLength })
+}
+
+print("Users with long passwords: \(getLongPasswordUsers(from: userMap))")
