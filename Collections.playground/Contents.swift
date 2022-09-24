@@ -1,12 +1,10 @@
 //Работа с коллекциями
 
-//1. Есть произвольный массив чисел, найти максимальное и минимальное число и поменять их местами
-//2. Есть два массива символов - собрать результирующее множество из символов, что повторяются в 2х массивах
-//3. Создать словарь с соотношением имя (ключ) пользователя - пароль (значение), получить из словаря все имена, пароли которых длиннее 10 символов
-
 import UIKit
 
-//MARK: - 1/3
+// MARK: - 1/3
+// Есть произвольный массив чисел, найти максимальное и минимальное число и поменять их местами
+
 let g_amountOfNumbers = 10
 
 let getArrayOfNumbers = { (1...g_amountOfNumbers).map( {_ in Int.random(in: 1...g_amountOfNumbers)} ) }
@@ -34,7 +32,24 @@ swapNumbers(from: &arrayOfNumbers)
 print(arrayOfNumbers)
 print("-------------------------------")
 
-//MARK: - 2/3
+// MARK: - 2/3
+// Есть два массива символов - собрать результирующее множество из символов, что повторяются в 2х массивах
 
+let charRange = UnicodeScalar("A").value...UnicodeScalar("Z").value
+let getArrayOfCharacters = { (charRange).map( {_ in Character(UnicodeScalar(charRange.randomElement()!)!) } ) }
+
+let firstArrayOfChars = getArrayOfCharacters()
+let secondArrayOfChars = getArrayOfCharacters()
+
+print(firstArrayOfChars)
+print(secondArrayOfChars)
+
+func getSetIntersection(_ firstArray: [Character], _ secondArray: [Character]) -> Set<Character> {
+    Set(firstArrayOfChars).intersection(secondArrayOfChars)
+}
+
+print(getSetIntersection(firstArrayOfChars, secondArrayOfChars))
 
 //MARK: - 3/3
+// Создать словарь с соотношением имя (ключ) пользователя - пароль (значение), получить из словаря все имена, пароли которых длиннее 10 символов
+
