@@ -52,3 +52,12 @@ print("-----------------------------")
 // MARK: - 4/4
 // функция принимает число на вход (год), проверить високосный ли он.
 
+let g_everyFewYears: UInt = 4
+
+func isLeap(test year: UInt) -> Bool {
+    year % g_everyFewYears == 0
+}
+
+var year = UInt.random(in: 1...2033)
+print("Is \(year) a leap year?")
+print(isLeap(test: year))
