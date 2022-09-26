@@ -37,8 +37,16 @@ print("-----------------------------")
 // MARK: - 3/4
 // функция принимает на вход опциональное замыкание и целое число, выполняет замыкание только. в случае если число больше 0.
 
+func positiveClosureExec(with number: Int32, closure: (Int32) -> ()) {
+    guard number > 0 else {
+        print(number.toString(), "is negative number.")
+        return
+    }
+    
+    closure(number)
+}
 
-
+positiveClosureExec(with: getRandomNumber(), closure: { (number: Int32) -> () in print(number.toString(), "is positive number.") } )
 print("-----------------------------")
 
 // MARK: - 4/4
