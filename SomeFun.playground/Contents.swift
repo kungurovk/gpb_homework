@@ -16,12 +16,31 @@ let secondRandomNumber = getRandomNumber()
 print("First random number: \(firstRandomNumber)")
 print("Second random number: \(secondRandomNumber)")
 print("Two numbers sum: \(sum(firstNumber: firstRandomNumber, secondNumber: secondRandomNumber))")
+print("-----------------------------")
 
 // MARK: - 2/4
 // функция принимает кортеж из числа и строки приводит число к строке и ввыводит в консоль резуультат.
 
+extension Int32 {
+    func toString() -> String {
+        String(self)
+    }
+}
+
+func tupleToString(_ tuple: (String, Int32)) {
+    print(tuple.0, tuple.1.toString())
+}
+
+tupleToString(("value: ", getRandomNumber()))
+print("-----------------------------")
+
 // MARK: - 3/4
 // функция принимает на вход опциональное замыкание и целое число, выполняет замыкание только. в случае если число больше 0.
 
+
+
+print("-----------------------------")
+
 // MARK: - 4/4
 // функция принимает число на вход (год), проверить високосный ли он.
+
