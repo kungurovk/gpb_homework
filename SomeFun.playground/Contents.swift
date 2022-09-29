@@ -52,12 +52,28 @@ print("-----------------------------")
 // MARK: - 4/4
 // функция принимает число на вход (год), проверить високосный ли он.
 
-let g_everyFewYears: UInt = 4
+let g_everyFourYears: UInt = 4
+let g_everyOneCentury: UInt = 100
+let g_everyFourCentury: UInt = 400
+
+let fewYearCriteria = { (year: UInt) -> Bool in year % g_everyFourYears == 0 }
+let oneCenturyCriteria = { (year: UInt) -> Bool in year % g_everyOneCentury == 0 }
+let fewCenturyCriteria = { (year: UInt) -> Bool in year % g_everyFourCentury == 0 }
 
 func isLeap(test year: UInt) -> Bool {
-    year % g_everyFewYears == 0
+    oneCenturyCriteria(year) ? fewCenturyCriteria(year) : fewYearCriteria(year)
 }
 
 var year = UInt.random(in: 1...2033)
-print("Is \(year) a leap year?")
-print(isLeap(test: year))
+
+let printIsLeap = { (year: UInt) in print("Is \(year) a leap year? \n\(isLeap(test: year))") }
+printIsLeap(year)
+
+year = 1700
+printIsLeap(year)
+
+year = 1704
+printIsLeap(year)
+
+year = 2000
+printIsLeap(year)
