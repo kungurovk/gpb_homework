@@ -1,6 +1,5 @@
 
 .DS_Store
-*.plist
 *.xcuserstate
 *.xcworkspacedata
 *.xcbkptlist
