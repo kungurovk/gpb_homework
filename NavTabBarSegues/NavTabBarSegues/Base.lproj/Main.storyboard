@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tGB-ul-4Mr">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab BarVC-->
+        <scene sceneID="hX9-6O-gsW">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tGB-ul-4Mr" customClass="TabBarVC" customModule="NavTabBarSegues" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="iUB-IJ-lf8"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CFi-Cu-MQ2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="PL1-at-0tV" kind="relationship" relationship="viewControllers" id="T0t-7w-EWm"/>
+                        <segue destination="zij-Cj-Swi" kind="relationship" relationship="viewControllers" id="Iyb-0h-kES"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HjS-Sj-HoN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2368" y="-70"/>
+        </scene>
+        <!--L-->
+        <scene sceneID="CHR-pX-iKM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PL1-at-0tV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="L" id="gAR-cj-OMd">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-20"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UIZ-Na-rH3">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rvS-o6-1Ou" kind="relationship" relationship="rootViewController" id="H5o-hK-xeU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aHE-D7-fNP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1188.4057971014495" y="-429.24107142857139"/>
+        </scene>
+        <!--FirstLVC-->
+        <scene sceneID="YeA-fw-x6Z">
+            <objects>
+                <viewController storyboardIdentifier="FirstLViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rvS-o6-1Ou" customClass="FirstLVC" customModule="NavTabBarSegues" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xjv-Me-VRS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKu-6y-RlJ">
+                                <rect key="frame" x="193.5" y="432" width="27" height="32.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1L" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0x-NV-pHE">
+                                        <rect key="frame" x="0.0" y="0.0" width="27" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4uo-gw-I2s"/>
+                        <color key="backgroundColor" red="0.94976752675895171" green="1" blue="0.73852864957159969" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="GKu-6y-RlJ" firstAttribute="centerX" secondItem="xjv-Me-VRS" secondAttribute="centerX" id="bmj-IL-qmI"/>
+                            <constraint firstItem="GKu-6y-RlJ" firstAttribute="centerY" secondItem="xjv-Me-VRS" secondAttribute="centerY" id="gs7-4T-GCR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wG3-wm-Smt">
+                        <barButtonItem key="rightBarButtonItem" image="arrowshape.turn.up.right.fill" catalog="system" id="FMC-fS-XeK">
+                            <connections>
+                                <segue destination="nAt-Z4-UZo" kind="show" id="AIX-el-RS0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0qa-vz-4k1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-278.26086956521743" y="-429.24107142857139"/>
+        </scene>
+        <!--SecondLVC-->
+        <scene sceneID="XgL-5U-RNC">
+            <objects>
+                <viewController storyboardIdentifier="SecondLViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nAt-Z4-UZo" customClass="SecondLVC" customModule="NavTabBarSegues" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="48e-Wp-oqq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3tr-Wz-GZW">
+                                <rect key="frame" x="192" y="432" width="30.5" height="32.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2L" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Kk-UJ-saY">
+                                        <rect key="frame" x="0.0" y="0.0" width="30.5" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sfU-1M-XjP"/>
+                        <color key="backgroundColor" red="0.96123074641345252" green="1" blue="0.47104853427115145" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="3tr-Wz-GZW" firstAttribute="centerY" secondItem="48e-Wp-oqq" secondAttribute="centerY" id="h4e-Y6-cri"/>
+                            <constraint firstItem="3tr-Wz-GZW" firstAttribute="centerX" secondItem="48e-Wp-oqq" secondAttribute="centerX" id="mTi-tz-Ngi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="XAK-kW-b2K">
+                        <barButtonItem key="leftBarButtonItem" image="arrowshape.turn.up.left.fill" catalog="system" id="JJA-Q4-8YZ">
+                            <connections>
+                                <action selector="goBack:" destination="nAt-Z4-UZo" id="PJt-ie-B7x"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="homekit" catalog="system" id="fwu-Lu-Lh0">
+                            <connections>
+                                <action selector="goToHome:" destination="nAt-Z4-UZo" id="zuL-HF-o1g"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="R2j-Eh-5lN" kind="unwind" identifier="goHomeL" unwindAction="unwindToFirstL:" id="cjo-hZ-lYe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bdo-sj-dtl" sceneMemberID="firstResponder"/>
+                <exit id="R2j-Eh-5lN" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="652" y="-429"/>
+        </scene>
+        <!--R-->
+        <scene sceneID="gHl-E9-03x">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zij-Cj-Swi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="R" id="BhH-EV-cNx">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-20"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="poY-gx-3uJ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5NR-k4-OwG">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="SaS-8E-B2Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8da-3L-Ebn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1188.4057971014495" y="317.41071428571428"/>
+        </scene>
+        <!--FirstRVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="FirstRVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="FirstRVC" customModule="NavTabBarSegues" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0G-8H-34R">
+                                <rect key="frame" x="192.5" y="432" width="29" height="32.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1R" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siR-C0-q4t">
+                                        <rect key="frame" x="0.0" y="0.0" width="29" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="1" green="0.77164467844975659" blue="0.75504064137391769" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="A0G-8H-34R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DrQ-Ue-1Pq"/>
+                            <constraint firstItem="A0G-8H-34R" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="SnZ-jA-fFH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oBI-9j-ddZ">
+                        <barButtonItem key="rightBarButtonItem" image="arrowshape.turn.up.right.fill" catalog="system" id="Wc3-3E-wB1">
+                            <connections>
+                                <segue destination="xDF-T1-hpW" kind="show" identifier="" id="CJb-H0-LRH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-278" y="317"/>
+        </scene>
+        <!--SecondRVC-->
+        <scene sceneID="QhW-Gx-ANB">
+            <objects>
+                <viewController storyboardIdentifier="SecondRViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xDF-T1-hpW" customClass="SecondRVC" customModule="NavTabBarSegues" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RSY-11-6sp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RYR-HG-D4n">
+                                <rect key="frame" x="191" y="432" width="32.5" height="32.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2R" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZZ-nY-FfK">
+                                        <rect key="frame" x="0.0" y="0.0" width="32.5" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fxy-rJ-3EV"/>
+                        <color key="backgroundColor" red="1" green="0.42581578216151283" blue="0.40588742705010705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="RYR-HG-D4n" firstAttribute="centerY" secondItem="RSY-11-6sp" secondAttribute="centerY" id="lt4-Bm-yiu"/>
+                            <constraint firstItem="RYR-HG-D4n" firstAttribute="centerX" secondItem="RSY-11-6sp" secondAttribute="centerX" id="xZL-3b-jo3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Fo-Wd-Ans">
+                        <barButtonItem key="leftBarButtonItem" image="arrowshape.turn.up.left.fill" catalog="system" id="tK1-eI-FgU">
+                            <connections>
+                                <action selector="goBack:" destination="xDF-T1-hpW" id="BjP-jQ-NqM"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="homekit" catalog="system" id="c9J-jS-qyN">
+                            <connections>
+                                <action selector="goToHome:" destination="xDF-T1-hpW" id="xZC-9Z-tDu"/>
+                                <segue destination="5Yo-tc-XzY" kind="unwind" identifier="goHomeR" unwindAction="unwindToFirstR:" id="QBB-vT-F7K"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CDk-7h-Ab5" sceneMemberID="firstResponder"/>
+                <exit id="5Yo-tc-XzY" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="651" y="317"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="104"/>
+        <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="104"/>
+        <image name="homekit" catalog="system" width="128" height="104"/>
+        <systemColor name="secondarySystemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
